@@ -15,7 +15,6 @@ export default function Footer() {
             <div className="flex flex-col gap-y-2 lg:flex-row lg:space-x-5">
               <span>我们每周 7 天、每天 24 小时为您解答</span>
               <span className="hidden lg:block bg-gray-300 w-[2px]" />
-              <span>我的微信：huanghanzhilian</span>
             </div>
           </div>
           <div className="min-w-max">
@@ -36,7 +35,7 @@ export default function Footer() {
 
         <div className="space-y-8 lg:flex lg:items-start lg:justify-between">
           {/* socials */}
-          <div className="flex items-center justify-between">
+          {/* <div className="flex items-center justify-between">
             <p className="lg:mr-20">更多联系方式！</p>
             <div className="flex space-x-5">
               <Link target="_blank" href="https://twitter.com/Huanghanzhilian">
@@ -55,8 +54,7 @@ export default function Footer() {
                 <Icons.Youtube className="w-8 h-8 text-gray-400" />
               </Link>
             </div>
-          </div>
-
+          </div> */}
           {/* Newslatter */}
           <div className="flex-1 max-w-lg">
             <form className="flex space-x-3">
@@ -86,18 +84,7 @@ export default function Footer() {
       </div>
 
       <div className="flex items-center justify-center py-3 mt-6 bg-gray-600 space-x-3">
-        <ResponsiveImage
-          dimensions="h-16 w-16"
-          className="overflow-hidden border-4 border-red-600 rounded-full"
-          src="/developer.jpg"
-          alt={`黄继鹏（继小鹏）`}
-        />
-        <p className="text-white">
-          <a href="/" target="_blank" className="text-sky-400">
-            黄继鹏（继小鹏）
-          </a>
-          开发{' '}
-        </p>
+        @copyright(七月传媒) 2025 xxx 备案信息
       </div>
     </footer>
   )

@@ -1,10 +1,6 @@
 'use client'
 
-import OSS from 'ali-oss'
-import { useLazyGetUploadTokenQuery } from '@/store/services'
-import { nanoid } from '@reduxjs/toolkit'
 import { useState } from 'react'
-import { getFilenameExt } from '@/utils'
 
 const UploadImage = props => {
   //? Props
@@ -15,14 +11,14 @@ const UploadImage = props => {
   const [error, setError] = useState(null)
   const [message, setMessage] = useState(null)
 
-  const [getUploadToken] = useLazyGetUploadTokenQuery()
-
   const handleFileChange = event => {
     setFile(event.target.files?.[0] || null)
   }
 
   const handleUpload = async event => {
     setLoading(true)
+    setError(null)
+    setMessage(null)
 
     if (!file) {
       setError('请选择一个文件')
@@ -42,33 +38,31 @@ const UploadImage = props => {
       return
     }
 
-    const credentials = await getUploadToken().unwrap()
+    try {
+      const formData = new FormData()
+      formData.append('file', file)
 
-    const { AccessKeyId, AccessKeySecret, SecurityToken } = credentials.data
-    const ossClient = new OSS({
-      accessKeyId: AccessKeyId,
-      accessKeySecret: AccessKeySecret,
-      stsToken: SecurityToken,
-      bucket: process.env.NEXT_PUBLIC_ALI_BUCKET_NAME,
-      region: process.env.NEXT_PUBLIC_ALI_REGION,
-    })
+      const response = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      })
 
-    const filePath = `${process.env.NEXT_PUBLIC_ALI_FILES_PATH}${folder || '/others'}/`
-    const fileName = `${nanoid()}.${getFilenameExt(file.name)}`
+      const data = await response.json()
 
-    ossClient
-      .put(`${filePath}${fileName}`, file)
-      .then(result => {
-        handleAddUploadedImageUrl(result.url)
-        setMessage('上传成功')
-      })
-      .catch(err => {
-        console.log(`Common upload failed`, err)
-        setError(err.message || '未上载图像')
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+      if (!response.ok) {
+        throw new Error(data.error || '上传失败')
+      }
+
+      // 构建图片 URL
+      const imageUrl = `/api/images/${data.imageId}`
+      handleAddUploadedImageUrl(imageUrl)
+      setMessage('上传成功')
+    } catch (err) {
+      console.error('Upload failed:', err)
+      setError(err.message || '上传失败')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (

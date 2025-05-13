@@ -11,6 +11,7 @@ const DetailsList = props => {
 
   //? Refs
   const newDetailRef = useRef(null)
+  const newValueRef = useRef(null)
 
   //? Form
   const { fields, append, remove } = useFieldArray({
@@ -20,9 +21,13 @@ const DetailsList = props => {
 
   //? Handlers
   const handleAddNewDetail = () => {
-    if (newDetailRef.current) {
-      append({ title: newDetailRef.current.value })
+    if (newDetailRef.current && newValueRef.current) {
+      append({
+        title: newDetailRef.current.value,
+        value: newValueRef.current.value,
+      })
       newDetailRef.current.value = ''
+      newValueRef.current.value = ''
     }
   }
 
@@ -53,13 +58,12 @@ const DetailsList = props => {
                 <DeleteIconBtn onClick={() => remove(index)} />
                 <input className="text-field__input" {...register(`${name}.${index}.title`)} />
               </td>
-              <td
-                className={
-                  name === 'info'
-                    ? 'bg-emerald-50 text-emerald-500'
-                    : 'bg-fuchsia-50 text-fuchsia-500'
-                }
-              ></td>
+              <td className={name === 'info' ? 'bg-emerald-50' : 'bg-fuchsia-50'}>
+                <input
+                  className="text-field__input w-full"
+                  {...register(`${name}.${index}.value`)}
+                />
+              </td>
             </tr>
           ))}
           <tr className="border-b-2 border-green-50">
@@ -67,18 +71,19 @@ const DetailsList = props => {
               <AddIconBtn onClick={handleAddNewDetail} />
               <input
                 type="text"
-                className="text-field__input "
+                className="text-field__input"
                 ref={newDetailRef}
-                placeholder="..."
+                placeholder="名称..."
               />
             </td>
-            <td
-              className={
-                name === 'info'
-                  ? 'bg-emerald-50 text-emerald-500'
-                  : 'bg-fuchsia-50 text-fuchsia-500'
-              }
-            ></td>
+            <td className={name === 'info' ? 'bg-emerald-50' : 'bg-fuchsia-50'}>
+              <input
+                type="text"
+                className="text-field__input w-full"
+                ref={newValueRef}
+                placeholder="值..."
+              />
+            </td>
           </tr>
         </tbody>
       </table>
