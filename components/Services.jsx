@@ -14,7 +14,7 @@ export default function Services() {
     {
       name: '七天无理由退换',
       icon: <Daysreturn className="w-10 h-10" />,
-    }
+    },
   ]
 
   //? Render(s)

@@ -12,7 +12,7 @@ const DiscountSlider = props => {
 
   const { products, isLoading } = useGetProductsQuery(
     {
-      sort:1,
+      sort: 1,
       category: currentCategory?.slug,
       page_size: 15,
       discount: false,

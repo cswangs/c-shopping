@@ -74,11 +74,22 @@ export default function Footer() {
           <div className="space-y-3 lg:max-w-2xl">
             <h5 className="font-semibold text-black">友情链接</h5>
             <p className="text-justify text-gray-700">
-              <Link href="https://www.ccgp.gov.cn/" target="_blank" className="hover:text-red-600 transition-colors">中国政府采购网</Link>
+              <Link
+                href="https://www.ccgp.gov.cn/"
+                target="_blank"
+                className="hover:text-red-600 transition-colors"
+              >
+                中国政府采购网
+              </Link>
               &nbsp;&nbsp;
-              <Link href="http://www.ccgp-beijing.gov.cn/" target="_blank" className="hover:text-red-600 transition-colors">北京市政府采购网</Link>
+              <Link
+                href="http://www.ccgp-beijing.gov.cn/"
+                target="_blank"
+                className="hover:text-red-600 transition-colors"
+              >
+                北京市政府采购网
+              </Link>
             </p>
-            
           </div>
 
           <div className="flex justify-center gap-x-2"></div>
@@ -87,10 +98,12 @@ export default function Footer() {
 
       <div className="flex flex-col items-center justify-center py-3 mt-6 bg-gray-600 space-y-3">
         <p className="text-white">关于我们 | 联系我们 | 人才招聘</p>
-        <p className="text-white">Copyright © 2023-2026 &nbsp;&nbsp;  北京太行深处科技有限公司 &nbsp;&nbsp;  地址：北京市西城区文兴街1号科研楼B104 &nbsp;&nbsp; 电话：18263368507</p>
-        <p className="text-white">京ICP备</p>  
+        <p className="text-white">
+          Copyright © 2023-2026 &nbsp;&nbsp; 北京太行深处科技有限公司 &nbsp;&nbsp;
+          地址：北京市西城区文兴街1号科研楼B104 &nbsp;&nbsp; 电话：18263368507
+        </p>
+        <p className="text-white">京ICP备</p>
       </div>
-      
     </footer>
   )
 }

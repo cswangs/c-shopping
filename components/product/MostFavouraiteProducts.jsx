@@ -68,7 +68,9 @@ const MostFavouraiteProducts = props => {
                     src={product.images[0].url}
                     alt={product.title}
                   />
-                  <div className="px-2 mt-2 text-base text-gray-700 line-clamp-2 min-h-[3rem]">{product.title}</div>
+                  <div className="px-2 mt-2 text-base text-gray-700 line-clamp-2 min-h-[3rem]">
+                    {product.title}
+                  </div>
                   <div
                     className={`flex items-start mt-2 gap-x-2 ${
                       product.discount ? 'justify-start' : 'justify-start'

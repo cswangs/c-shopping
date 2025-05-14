@@ -8,7 +8,7 @@ export default function Header() {
         <div className="container lg:flex lg:py-2">
           <div className="inline-flex items-center justify-between w-full border-b lg:border-b-0 lg:max-w-min lg:mr-8">
             <Link passHref href="/">
-              <div 
+              <div
                 className="w-40 h-14 bg-contain bg-no-repeat bg-center"
                 style={{ backgroundImage: 'url(/taihang.jpg)' }}
               />
