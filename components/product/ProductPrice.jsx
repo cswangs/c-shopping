@@ -9,21 +9,21 @@ const ProductPrice = props => {
   //? Render(s)
   return (
     <div className={`${(singleProduct && 'flex flex-col-reverse') || ''}`}>
-      <div className={`flex items-center ${(singleProduct && 'self-end') || ''}`}>
-        <span className="text-sm text-gray-700">
+      <div className={`flex items-center px-2 ${(singleProduct && 'self-end') || ''}`}>
+        <span className="text-lg font-bold text-red-500">¥</span>
+        <span className="ml-1 text-lg font-bold text-red-500">
           {formatNumber(price - (discount * price) / 100)}
         </span>
-        <span className="ml-1">¥</span>
       </div>
 
       {discount > 0 && (
-        <div>
+        <div className="px-2">
           {singleProduct && discount > 0 && inStock !== 0 && (
             <DiscountProduct discount={discount} />
           )}
           <span className="ml-2 text-sm text-gray-500 line-through">
-            {formatNumber(price)}
-            <span className="ml-1">¥</span>
+            <span className="text-sm text-gray-500">¥</span>
+            <span className="ml-1">{formatNumber(price)}</span>
           </span>
         </div>
       )}

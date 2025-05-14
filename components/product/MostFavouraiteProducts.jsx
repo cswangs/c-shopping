@@ -9,7 +9,7 @@ const MostFavouraiteProducts = props => {
 
   const { products, isLoading } = useGetProductsQuery(
     {
-      sort: 5,
+      sort: 3,
       category: categorySlug,
     },
     {
@@ -25,8 +25,8 @@ const MostFavouraiteProducts = props => {
   return (
     <section className="px-3">
       <div className="flex items-center mb-3 space-x-2">
-        <Icons.Heart className="icon text-amber-400" />
-        <h4 className="text-xl">最受欢迎的商品</h4>
+        <Icons.Heart className="icon text-red-500" />
+        <h4 className="text-xl">精选品类</h4>
       </div>
       <div className="grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {isLoading
@@ -68,16 +68,18 @@ const MostFavouraiteProducts = props => {
                     src={product.images[0].url}
                     alt={product.title}
                   />
+                  <div className="px-2 mt-2 text-base text-gray-700 line-clamp-2 min-h-[3rem]">{product.title}</div>
                   <div
                     className={`flex items-start mt-2 gap-x-2 ${
-                      product.discount ? 'justify-evenly' : 'justify-end pl-8'
+                      product.discount ? 'justify-start' : 'justify-start'
                     }`}
                   >
-                    {product.discount ? <DiscountProduct discount={product.discount} /> : null}
+                    {/* {product.discount ? <DiscountProduct discount={product.discount} /> : null} */}
                     <ProductPrice
                       inStock={product.inStock}
                       discount={product.discount}
                       price={product.price}
+                      className="text-red-500 font-bold"
                     />
                   </div>
                 </article>

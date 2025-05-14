@@ -13,7 +13,7 @@ export default function TextField(props) {
     const inputValue = e.target.value
 
     if (type === 'number' && inputValue.length !== 0) {
-      field.onChange(parseInt(inputValue))
+      field.onChange(parseFloat(inputValue))
     } else {
       field.onChange(inputValue)
     }

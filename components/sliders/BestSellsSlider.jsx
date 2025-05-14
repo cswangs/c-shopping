@@ -27,8 +27,8 @@ const BestSellsSlider = props => {
   return (
     <section className="px-3">
       <div className="flex items-center mb-3 space-x-2">
-        <Icons.Check className="w-7 h-7 text-amber-400" />
-        <h4 className="text-xl">最畅销商品</h4>
+        <Icons.Check className="w-7 h-7 text-red-500" />
+        <h4 className="text-xl">新品展示</h4>
       </div>
 
       <div className="grid grid-cols-[repeat(5,280px)] md:grid-cols-[repeat(5,300px)] grid-rows-3 xl:grid-cols-[repeat(5,330px)] grid-flow-col overflow-x-auto  gap-x-2 p-2">

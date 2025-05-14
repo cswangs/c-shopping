@@ -28,8 +28,8 @@ export const bannerSchema = Yup.object().shape({
   image: Yup.object().shape({
     url: Yup.string()
       .required('请输入图片地址')
-      .url('地址无效')
-      .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
+      // .url('地址无效')
+      // .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
   }),
 })
 
@@ -38,8 +38,8 @@ export const sliderSchema = Yup.object().shape({
   image: Yup.object().shape({
     url: Yup.string()
       .required('请输入图片地址')
-      .url('地址无效')
-      .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
+      // .url('地址无效')
+      // .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
   }),
 })
 

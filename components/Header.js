@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Icons, Search, Signup, Cart, Navbar, Sidebar, AddressBar, LogoH } from 'components'
+import Image from 'next/image'
+import { Icons, Search, Signup, Cart, Navbar, Sidebar, AddressBar } from 'components'
 export default function Header() {
   return (
     <>
@@ -7,7 +8,10 @@ export default function Header() {
         <div className="container lg:flex lg:py-2">
           <div className="inline-flex items-center justify-between w-full border-b lg:border-b-0 lg:max-w-min lg:mr-8">
             <Link passHref href="/">
-              <LogoH className="w-40 h-14" />
+              <div 
+                className="w-40 h-14 bg-contain bg-no-repeat bg-center"
+                style={{ backgroundImage: 'url(/taihang.jpg)' }}
+              />
             </Link>
             <Sidebar />
           </div>

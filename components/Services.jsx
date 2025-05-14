@@ -3,22 +3,18 @@ import { CashOnDelivery, Daysreturn, ExpressDelivery, OriginalProducts, Support 
 export default function Services() {
   const services = [
     {
-      name: '快递的可能性',
+      name: '付款后48小时内发货',
       icon: <ExpressDelivery className="w-10 h-10" />,
     },
-    { name: '每周 7 天、每天 24 小时', icon: <Support className="w-10 h-10" /> },
+    { name: '客服 24 小时在线', icon: <Support className="w-10 h-10" /> },
     {
-      name: '可以当场付款',
+      name: '支持货到付款',
       icon: <CashOnDelivery className="w-10 h-10" />,
     },
     {
-      name: '七日退货保证',
+      name: '七天无理由退换',
       icon: <Daysreturn className="w-10 h-10" />,
-    },
-    {
-      name: '保证产品的原创性',
-      icon: <OriginalProducts className="w-10 h-10" />,
-    },
+    }
   ]
 
   //? Render(s)

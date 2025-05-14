@@ -12,10 +12,10 @@ const DiscountSlider = props => {
 
   const { products, isLoading } = useGetProductsQuery(
     {
-      sort: 6,
+      sort:1,
       category: currentCategory?.slug,
       page_size: 15,
-      discount: true,
+      discount: false,
     },
     {
       selectFromResult: ({ data, isLoading }) => ({

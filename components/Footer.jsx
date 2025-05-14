@@ -12,10 +12,10 @@ export default function Footer() {
         <div className="flex justify-between">
           <div>
             <LogoChina className="w-32 h-10 mb-6" />
-            <div className="flex flex-col gap-y-2 lg:flex-row lg:space-x-5">
+            {/* <div className="flex flex-col gap-y-2 lg:flex-row lg:space-x-5">
               <span>我们每周 7 天、每天 24 小时为您解答</span>
               <span className="hidden lg:block bg-gray-300 w-[2px]" />
-            </div>
+            </div> */}
           </div>
           <div className="min-w-max">
             <button
@@ -56,7 +56,7 @@ export default function Footer() {
             </div>
           </div> */}
           {/* Newslatter */}
-          <div className="flex-1 max-w-lg">
+          {/* <div className="flex-1 max-w-lg">
             <form className="flex space-x-3">
               <input placeholder="你的邮件" className="input" type="email" />
               <button
@@ -66,26 +66,31 @@ export default function Footer() {
                 提交你的邮箱
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         {/* info */}
         <div className="space-y-6 lg:flex lg:justify-between">
           <div className="space-y-3 lg:max-w-2xl">
-            <h5 className="font-semibold text-black">{siteTitle}在线商店，在线评价、选择和购买</h5>
+            <h5 className="font-semibold text-black">友情链接</h5>
             <p className="text-justify text-gray-700">
-              安全的网购需要店铺能够在短时间内为顾客提供多样、优质、价格合理的商品，并有退货保障；
-              {siteTitle}。在线商店多年来一直在努力开发的功能，并通过这种方式拥有了固定客户
+              <Link href="https://www.ccgp.gov.cn/" target="_blank" className="hover:text-red-600 transition-colors">中国政府采购网</Link>
+              &nbsp;&nbsp;
+              <Link href="http://www.ccgp-beijing.gov.cn/" target="_blank" className="hover:text-red-600 transition-colors">北京市政府采购网</Link>
             </p>
+            
           </div>
 
           <div className="flex justify-center gap-x-2"></div>
         </div>
       </div>
 
-      <div className="flex items-center justify-center py-3 mt-6 bg-gray-600 space-x-3">
-        @copyright(七月传媒) 2025 xxx 备案信息
+      <div className="flex flex-col items-center justify-center py-3 mt-6 bg-gray-600 space-y-3">
+        <p className="text-white">关于我们 | 联系我们 | 人才招聘</p>
+        <p className="text-white">Copyright © 2023-2026 &nbsp;&nbsp;  北京太行深处科技有限公司 &nbsp;&nbsp;  地址：北京市西城区文兴街1号科研楼B104 &nbsp;&nbsp; 电话：18263368507</p>
+        <p className="text-white">京ICP备</p>  
       </div>
+      
     </footer>
   )
 }
