@@ -25,9 +25,9 @@ const MostFavouraiteProducts = props => {
 
   return (
     <section className="px-3">
-      <div className="flex items-center mb-3 space-x-2">
-        <Icons.Heart className="icon text-red-500" />
-        <h4 className="text-xl">精选品类</h4>
+      <div className="flex items-center mb-3 space-x-2 bg-[linear-gradient(135deg,#ff4d4d_0%,#f9436b_100%)] px-4 py-2 rounded-lg border-l-4 border-white/20">
+        <Icons.Heart className="icon text-white/90 drop-shadow-md" />
+        <h4 className="text-2xl font-bold text-white/95 text-shadow">精选品类</h4>
       </div>
       <div className="grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         {isLoading

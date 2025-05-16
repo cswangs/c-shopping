@@ -10,13 +10,13 @@ export default function Search() {
     <div className="flex flex-row flex-grow max-w-3xl">
       <div
         onClick={searchModalHanlders.open}
-        className="flex flex-row flex-grow rounded-md bg-zinc-200/80"
+        className="flex flex-row flex-grow rounded-md border-2 border-red-300 hover:border-red-500 bg-white transition-all duration-200"
       >
-        <button className="flex-grow py-1 px-3 text-left bg-transparent outline-none cursor-pointer text-gray-400 focus:border-none">
-          善假于物，用好搜索...
+        <button className="flex-grow py-2 px-3 text-left outline-none cursor-pointer text-gray-500 focus:border-none">
+          搜好货
         </button>
-        <button className="p-2">
-          <Icons.Search className="icon text-gray-400" />
+        <button className="flex items-center px-4 space-x-1 bg-red-500 hover:bg-red-600 text-white transition-colors duration-200 ">
+          <span className="text-lg font-medium text-white">搜索</span>
         </button>
       </div>
       <SearchModal isShow={isShowSearchModal} onClose={searchModalHanlders.close} />

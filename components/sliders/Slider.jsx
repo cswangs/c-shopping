@@ -12,8 +12,8 @@ const Slider = props => {
 
   const SliderImage = ({ item }) => (
     <ResponsiveImage
-      dimensions="w-full h-64 md:h-72 lg:h-[400px]"
-      imageStyles="object-cover object-[72%] lg:object-center "
+      dimensions="w-full h-[50vw] sm:h-[40vw] md:h-72 lg:h-[400px]"
+      imageStyles="object-cover object-center"
       src={item.image.url}
       alt={item.title}
       unoptimized={true}
@@ -24,7 +24,7 @@ const Slider = props => {
   if (data?.length === 0) return null
 
   return (
-    <section className="lg:mx-3">
+    <section className="mx-3">
       <Swiper
         pagination={{ clickable: true }}
         autoplay={{
@@ -32,14 +32,14 @@ const Slider = props => {
           disableOnInteraction: false,
         }}
         modules={[Pagination, Autoplay]}
-        className="mySwiper overflow-hidden lg:rounded-2xl"
+        className="mySwiper overflow-hidden rounded-2xl"
       >
         {data
           .filter(item => item.isPublic)
           .map((item, index) => (
             <SwiperSlide key={index}>
               {item.uri ? (
-                <a href={item.uri} target="_blank" className="">
+                <a href={item.uri} target="_blank" className="block">
                   <SliderImage item={item} />
                 </a>
               ) : (

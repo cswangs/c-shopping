@@ -35,24 +35,24 @@ export default function Navbar() {
 
   //? Render
   return (
-    <div className="hidden lg:flex items-center gap-x-4">
+    <div className="flex items-center gap-x-2 lg:gap-x-4">
       <div className="group">
         <button
-          className="flex-center text-sm px-2 gap-x-1 text-xl"
+          className="flex-center text-xs lg:text-sm px-1 lg:px-2 gap-x-0.5 lg:gap-x-1 text-base lg:text-xl"
           onMouseOver={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
         >
-          <Icons.Bars className="icon" />
+          <Icons.Bars className="w-4 h-4 lg:w-5 lg:h-5" />
           商品分类
         </button>
         <div
-          className={`fixed left-0 z-20 w-full h-screen top-28 bg-gray-400/50 ${
+          className={`fixed left-0 z-20 w-full h-screen top-20 lg:top-28 bg-gray-400/50 ${
             hover ? 'block' : 'hidden'
           }`}
         />
 
         <div
-          className="absolute z-40 hidden w-full bg-white rounded-md shadow-lg border border-gray-100 top-8 group-hover:block"
+          className="absolute z-40 hidden w-full bg-white rounded-md shadow-lg border border-gray-100 top-6 lg:top-8 group-hover:block"
           onMouseOver={() => setHover(true)}
           onMouseLeave={() => {
             hanldeDeactive()
@@ -60,7 +60,7 @@ export default function Navbar() {
           }}
         >
           <div className="flex">
-            <ul className="border-l-2 border-gray-100 w-72">
+            <ul className="border-l-2 border-gray-100 w-48 lg:w-72">
               {isLoading ? (
                 <NavbarSkeleton />
               ) : categories ? (
@@ -69,27 +69,26 @@ export default function Navbar() {
                   .map(levelOneCategory => (
                     <li
                       key={levelOneCategory._id}
-                      className="w-full px-2 py-0.5 text-sm hover:bg-gray-100 group"
+                      className="w-full px-1 lg:px-2 py-0.5 text-xs lg:text-sm hover:bg-gray-100 group"
                       onMouseOver={() => handleActive(levelOneCategory)}
                     >
                       <Link
                         href={`/main/${levelOneCategory.slug}`}
-                        className="px-3 py-3 flex gap-x-1.5 items-center"
+                        className="px-2 lg:px-3 py-2 lg:py-3 flex gap-x-1 lg:gap-x-1.5 items-center"
                       >
                         <ResponsiveImage
-                          dimensions="w-7 h-7"
+                          dimensions="w-5 h-5 lg:w-7 lg:h-7"
                           className="grayscale"
                           src={levelOneCategory.image}
                           alt={levelOneCategory.name}
                         />
-
                         <span>{levelOneCategory.name}</span>
                       </Link>
                     </li>
                   ))
               ) : null}
             </ul>
-            <ul className="flex flex-wrap w-full gap-10 px-2 py-4">
+            <ul className="flex-1 p-2 lg:p-4 grid grid-cols-2 lg:grid-cols-3 gap-2 lg:gap-4">
               {isLoading
                 ? null
                 : activeMinCat
@@ -99,19 +98,19 @@ export default function Navbar() {
                           <li key={levelTwoCategory._id} className="h-fit">
                             <Link
                               href={`/products?category=${levelTwoCategory.slug}`}
-                              className="flex-center px-2 mb-1 text-sm font-semibold tracking-wider text-gray-700 border-l-2 border-red-500"
+                              className="flex items-center gap-x-1 px-2 py-1 mb-1 text-xs lg:text-sm font-semibold tracking-wider text-gray-700 border-l-2 border-red-500"
                             >
                               {levelTwoCategory.name}
-                              <Icons.ArrowRight2 className="icon" />
+                              <Icons.ArrowRight2 className="w-3 h-3 lg:w-4 lg:h-4" />
                             </Link>
-                            <ul className="space-y-1">
+                            <ul className="space-y-0.5 lg:space-y-1">
                               {categories
                                 .filter(category => category.parent === levelTwoCategory._id)
                                 .map(levelThreeCategory => (
                                   <li key={levelThreeCategory._id}>
                                     <Link
                                       href={`/products?category=${levelThreeCategory.slug}`}
-                                      className="px-3 text-xs font-medium text-gray-700"
+                                      className="block px-2 lg:px-3 py-0.5 text-[10px] lg:text-xs font-medium text-gray-700 hover:text-red-500"
                                     >
                                       {levelThreeCategory.name}
                                     </Link>
@@ -129,7 +128,7 @@ export default function Navbar() {
       </div>
       <Link
         href="/paidinfo"
-        className="flex-center text-sm px-2 gap-x-1 text-xl hover:text-red-600"
+        className="flex-center text-xs lg:text-sm px-1 lg:px-2 gap-x-0.5 lg:gap-x-1 text-base lg:text-xl hover:text-red-600"
       >
         <Icons.Post className="w-4 h-4 lg:w-5 lg:h-5" />
         有偿信息

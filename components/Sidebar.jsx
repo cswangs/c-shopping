@@ -143,6 +143,15 @@ export default function Sidebar() {
                 ))}
             </div>
           ) : null}
+          <div className="px-4 py-3 border-t border-gray-200">
+            <Link
+              href="/paidinfo"
+              className="flex items-center gap-x-2 text-red-500 hover:text-red-600 transition-colors"
+              onClick={handleClose} // 保持侧边栏关闭行为一致
+            >
+              <span className="text-lg font-medium">有偿信息</span>
+            </Link>
+          </div>
         </div>
       </div>
     </>

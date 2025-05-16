@@ -26,9 +26,22 @@ const BestSellsSlider = props => {
   //? Render(s)
   return (
     <section className="px-3">
-      <div className="flex items-center mb-3 space-x-2">
-        <Icons.Check className="w-7 h-7 text-red-500" />
-        <h4 className="text-xl">新品展示</h4>
+      <div
+        className="flex items-center mb-3 space-x-2 
+  bg-[linear-gradient(135deg,#ff4d4d_0%,#f9436b_100%)] 
+  px-4 py-2 rounded-lg 
+  border-l-4 border-white/20
+  shadow-[0_4px_6px_-1px_rgba(239,68,68,0.3)]"
+      >
+        <Icons.Check className="w-7 h-7 text-white/90 drop-shadow-md" />
+
+        <h4
+          className="text-2xl font-bold text-white/95 
+    tracking-wide
+    [text-shadow:_0_2px_4px_rgba(0,0,0,0.2)]"
+        >
+          新品展示
+        </h4>
       </div>
 
       <div className="grid grid-cols-[repeat(5,280px)] md:grid-cols-[repeat(5,300px)] grid-rows-3 xl:grid-cols-[repeat(5,330px)] grid-flow-col overflow-x-auto  gap-x-2 p-2">
