@@ -9,6 +9,7 @@ import {
   BsSortDown,
   BsShieldCheck,
   BsFillXCircleFill,
+  BsChevronCompactRight,
 } from 'react-icons/bs'
 import { FiLogIn, FiLogOut, FiEdit, FiPlus, FiMinus } from 'react-icons/fi'
 import { VscThreeBars, VscLocation } from 'react-icons/vsc'
@@ -82,6 +83,7 @@ const Icons = {
   ArrowUp: RiArrowDropUpLine,
   ArrowRight: RiArrowRightLine,
   ArrowRight2: RiArrowDropRightLine,
+  ArrowRight3: BsChevronCompactRight,
   Edit: FiEdit,
   Clock: BsClockHistory,
   Clock2: CgSandClock,

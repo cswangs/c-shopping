@@ -5,6 +5,7 @@ import 'swiper/css'
 
 import { DiscountProduct, ProductPrice, ResponsiveImage, Skeleton } from 'components'
 import { useGetProductsQuery } from '@/store/services'
+import { Icons } from 'components'
 
 const DiscountSlider = props => {
   //? Props
@@ -105,14 +106,10 @@ const DiscountSlider = props => {
                 </SwiperSlide>
               ))}
           <SwiperSlide className="py-10 flex-center flex-col">
-            <Image
-              src={currentCategory.image}
-              alt={currentCategory.name}
-              width={96}
-              height={96}
-              priority
-            />
-            <div className=" text-white text-sm">查看全部</div>
+            <div className="flex items-center gap-x-1 text-white text-xl">
+              查看全部
+              <Icons.ArrowRight3 className="w-5 h-5" />
+            </div>
           </SwiperSlide>
         </Swiper>
       </section>
