@@ -9,6 +9,7 @@ import { Icons, SidebarSkeleton, LogoH } from 'components'
 import { useDisclosure } from 'hooks'
 
 import { useGetCategoriesQuery } from '@/store/services'
+import Image from 'next/image'
 
 export default function Sidebar() {
   //? Assets
@@ -51,7 +52,15 @@ export default function Sidebar() {
         />
 
         <div className="overflow-y-auto absolute py-4 top-0 right-0 z-20 w-3/4 h-screen max-w-sm space-y-4 bg-white">
-          <LogoH className="h-10 ml-3 w-28" />
+          {/* <LogoH className="h-10 ml-3 w-28" /> */}
+          <Image
+            src="/brandlogo.jpg"
+            alt="品牌Logo"
+            width={112} // 48*4
+            height={40} // 24*4
+            className="ml-3 w-28 h-10 object-contain"
+            priority
+          />
           <h5 className="p-3 border-t-2  border-gray-200">商品分类</h5>
           {isLoading ? (
             <SidebarSkeleton />

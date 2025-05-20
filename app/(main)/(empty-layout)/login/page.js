@@ -8,6 +8,7 @@ import { HandleResponse, LoginForm, Logo } from '@/components'
 import { useLoginMutation } from '@/store/services'
 import { useDispatch } from 'react-redux'
 import { userLogin } from 'store'
+import Image from 'next/image'
 
 export default function LoginPage() {
   //? Assets
@@ -45,11 +46,18 @@ export default function LoginPage() {
       <main className="grid items-center min-h-screen">
         <section className="container max-w-md px-12 py-6 space-y-6 lg:border lg:border-gray-100 lg:rounded-lg lg:shadow">
           <Link passHref href="/">
-            <Logo className="mx-auto w-48 h-24" />
+            <Image
+              src="/brandlogo.jpg"
+              alt="品牌Logo"
+              width={192} // 48*4
+              height={96} // 24*4
+              className="mx-auto w-48 h-24 object-contain"
+              priority
+            />
           </Link>
           <h1>
             <font className="">
-              <font>登录</font>
+              <font>用户登录</font>
             </font>
           </h1>
           <LoginForm isLoading={isLoading} onSubmit={submitHander} />

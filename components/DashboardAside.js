@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { Icons, BoxLink, Logout, LogoH } from 'components'
+import Image from 'next/image'
 
 export default function ProfileAside() {
   const profilePaths = [
@@ -55,7 +56,14 @@ export default function ProfileAside() {
   return (
     <aside className="sticky mt-6 lg:border lg:border-gray-200 lg:rounded-md lg:pt-4 min-w-max top-6">
       <Link passHref href="/admin">
-        <LogoH className="w-40 h-12 mx-auto" />
+        <Image
+          src="/brandlogo.jpg"
+          alt="品牌Logo"
+          width={192} // 48*4
+          height={96} // 24*4
+          className="mx-auto w-40 h-12 object-contain"
+          priority
+        />
       </Link>
 
       <div className="mt-4">

@@ -10,7 +10,7 @@ export default function Header() {
             <Link passHref href="/">
               <div
                 className="w-40 h-14 bg-contain bg-no-repeat bg-center"
-                style={{ backgroundImage: 'url(/taihang.jpg)' }}
+                style={{ backgroundImage: 'url(/brandlogo.jpg)' }}
               />
             </Link>
             <Sidebar />

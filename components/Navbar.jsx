@@ -52,15 +52,15 @@ export default function Navbar() {
         />
 
         <div
-          className="absolute z-40 hidden w-full bg-white rounded-md shadow-lg border border-gray-100 top-8 group-hover:block"
+          className="absolute z-40 hidden w-full bg-white rounded-md shadow-lg border border-gray-100 top-9 group-hover:block"
           onMouseOver={() => setHover(true)}
           onMouseLeave={() => {
             hanldeDeactive()
             setHover(false)
           }}
         >
-          <div className="flex">
-            <ul className="border-l-2 border-gray-100 w-72">
+          <div className="flex p-4 ">
+            <ul className="bg-gray-50 w-52 rounded-md">
               {isLoading ? (
                 <NavbarSkeleton />
               ) : categories ? (
@@ -69,49 +69,45 @@ export default function Navbar() {
                   .map(levelOneCategory => (
                     <li
                       key={levelOneCategory._id}
-                      className="w-full px-2 py-0.5 text-sm hover:bg-gray-100 group"
+                      className="w-full px-2 py-0.5  hover:bg-gray-200 group"
                       onMouseOver={() => handleActive(levelOneCategory)}
                     >
                       <Link
                         href={`/main/${levelOneCategory.slug}`}
-                        className="px-3 py-3 flex gap-x-1.5 items-center"
+                        className="px-3 py-3 flex gap-x-1.5 items-center text-base "
                       >
-                        <ResponsiveImage
-                          dimensions="w-7 h-7"
-                          className="grayscale"
-                          src={levelOneCategory.image}
-                          alt={levelOneCategory.name}
-                        />
-
                         <span>{levelOneCategory.name}</span>
                       </Link>
                     </li>
                   ))
               ) : null}
             </ul>
-            <ul className="flex flex-wrap w-full gap-10 px-2 py-4">
+            <ul className="flex flex-col w-full gap-4 px-2 py-4 border border-red-500 rounded-md">
               {isLoading
                 ? null
                 : activeMinCat
                   ? categories?.map(levelTwoCategory => {
                       if (levelTwoCategory.parent === activeMinCat._id) {
                         return (
-                          <li key={levelTwoCategory._id} className="h-fit">
+                          <li key={levelTwoCategory._id} className="flex items-start ">
+                            {/* 二级分类名和箭头 */}
+
                             <Link
                               href={`/products?category=${levelTwoCategory.slug}`}
-                              className="flex-center px-2 mb-1 text-sm font-semibold tracking-wider text-gray-700 border-l-2 border-red-500"
+                              className="flex items-center w-24  text-sm  hover:text-red-500  "
                             >
                               {levelTwoCategory.name}
-                              <Icons.ArrowRight2 className="icon" />
+                              <Icons.ArrowRight2 className="ml-1 w-4 h-4" />
                             </Link>
-                            <ul className="space-y-1">
+                            {/* 三级分类横向排列 */}
+                            <ul className="flex flex-wrap gap-x-4 ml-2  ">
                               {categories
                                 .filter(category => category.parent === levelTwoCategory._id)
                                 .map(levelThreeCategory => (
                                   <li key={levelThreeCategory._id}>
                                     <Link
                                       href={`/products?category=${levelThreeCategory.slug}`}
-                                      className="px-3 text-xs font-medium text-gray-700"
+                                      className="text-sm text-gray-400 hover:text-red-500"
                                     >
                                       {levelThreeCategory.name}
                                     </Link>
