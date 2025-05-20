@@ -32,7 +32,7 @@ const updateCategory = apiHandler(
     schema: joi.object({
       name: joi.string().required(),
       slug: joi.string().required(),
-      image: joi.string().required(),
+      image: joi.string().allow('', null),
       colors: joi.object(),
       level: joi.number().required(),
       parent: joi.string(),

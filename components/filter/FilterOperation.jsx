@@ -98,14 +98,14 @@ const FilterOperation = props => {
           name="inStock"
           checked={filters.inStock}
           onChange={handlefilter}
-          label="仅限库存商品"
+          label="只看有库存商品"
         />
 
         <CustomCheckbox
           name="discount"
           checked={filters.discount}
           onChange={handlefilter}
-          label="仅限特价商品"
+          label="只看特价商品"
         />
 
         <div className="py-4">

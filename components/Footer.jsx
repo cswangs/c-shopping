@@ -11,7 +11,10 @@ export default function Footer() {
         {/* Logo & scroll to top */}
         <div className="flex justify-between">
           <div>
-            <LogoChina className="w-32 h-10 mb-6" />
+            {/* <div>
+              <span className="w-32 h-10 mb-6">精选好物</span>
+            </div> */}
+            {/* <LogoChina className="w-32 h-10 mb-6" /> */}
             {/* <div className="flex flex-col gap-y-2 lg:flex-row lg:space-x-5">
               <span>我们每周 7 天、每天 24 小时为您解答</span>
               <span className="hidden lg:block bg-gray-300 w-[2px]" />
@@ -31,42 +34,6 @@ export default function Footer() {
 
         <div className="hidden lg:block">
           <Services />
-        </div>
-
-        <div className="space-y-8 lg:flex lg:items-start lg:justify-between">
-          {/* socials */}
-          {/* <div className="flex items-center justify-between">
-            <p className="lg:mr-20">更多联系方式！</p>
-            <div className="flex space-x-5">
-              <Link target="_blank" href="https://twitter.com/Huanghanzhilian">
-                <Icons.Twitter className="w-8 h-8 text-gray-400" />
-              </Link>
-              <Link
-                target="_blank"
-                href="https://www.linkedin.com/in/%E7%BB%A7%E9%B9%8F-%E9%BB%84-65217a265/"
-              >
-                <Icons.Linkedin className="w-8 h-8 text-gray-400" />
-              </Link>
-              <Link target="_blank" href="https://www.instagram.com/jipenghuang/">
-                <Icons.Instagram className="w-8 h-8 text-gray-400" />
-              </Link>
-              <Link target="_blank" href="https://www.youtube.com/channel/UCPJUB4zMmknuFw7pWUSWgIw">
-                <Icons.Youtube className="w-8 h-8 text-gray-400" />
-              </Link>
-            </div>
-          </div> */}
-          {/* Newslatter */}
-          {/* <div className="flex-1 max-w-lg">
-            <form className="flex space-x-3">
-              <input placeholder="你的邮件" className="input" type="email" />
-              <button
-                type="submit"
-                className="px-2 text-white bg-gray-200 rounded-md whitespace-nowrap"
-              >
-                提交你的邮箱
-              </button>
-            </form>
-          </div> */}
         </div>
 
         {/* info */}

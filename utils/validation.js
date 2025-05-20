@@ -17,8 +17,8 @@ export const registerSchema = Yup.object().shape({
 export const categorySchema = Yup.object().shape({
   name: Yup.string().required('类别名称不能为空'),
   slug: Yup.string().required('路径名不能为空'),
-  image: Yup.string()
-    .required('输入图片地址')
+  // image: Yup.string()
+  //   .required('输入图片地址')
     // .url('无效的图像地址')
     // .matches(/\.(gif|jpe?g|png|webp)$/i, '图像地址必须是有效的图像URL'),
 })

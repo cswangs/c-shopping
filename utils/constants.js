@@ -4,15 +4,15 @@ export const sorts = [
     value: 1,
   },
   {
-    name: '最畅销',
+    name: '销量',
     value: 2,
   },
   {
-    name: '最便宜的',
+    name: '价格从低到高',
     value: 3,
   },
   {
-    name: '最重磅的',
+    name: '价格从高到低',
     value: 4,
   },
 ]

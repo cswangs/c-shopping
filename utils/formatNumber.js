@@ -1,8 +1,7 @@
 export default function formatNumber(n) {
-  if (n) {
-    let newNumber = n.toString()
-
-    return newNumber.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+  if (n !== undefined && n !== null && n !== '') {
+    const num = Number(n)
+    return Number.isInteger(num) ? num : num.toFixed(2).replace(/\.?0+$/, '')
   }
   return ''
 }

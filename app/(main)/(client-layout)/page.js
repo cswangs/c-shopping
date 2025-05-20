@@ -51,12 +51,12 @@ export default async function Home({ searchParams }) {
       <div className="py-4 mx-auto space-y-24 xl:mt-28">
         <MainSlider data={sliders} />
         <DiscountSlider currentCategory={currentCategory} />
-        <Categories
+        {/* <Categories
           childCategories={{ categories: childCategories, title: '所有分类' }}
           color={currentCategory?.colors?.start}
           name={currentCategory?.name}
           homePage
-        />
+        /> */}
         <BannerOne data={bannerOneType} />
         <BestSellsSlider categorySlug={currentCategory?.slug} />
         <BannerTwo data={bannerTwoType} />

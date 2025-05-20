@@ -92,9 +92,9 @@ const DiscountSlider = props => {
                       />
 
                       <div className="flex px-2 mt-1.5 justify-evenly gap-x-2 ">
-                        <div>
+                        {/* <div>
                           <DiscountProduct discount={product.discount} />
-                        </div>
+                        </div> */}
                         <ProductPrice
                           inStock={product.inStock}
                           discount={product.discount}

@@ -11,7 +11,7 @@ const MostFavouraiteProducts = props => {
     {
       sort: 3,
       category: categorySlug,
-      page_size: 12,
+      page_size: 36,
     },
     {
       selectFromResult: ({ data, isLoading }) => ({
@@ -29,7 +29,7 @@ const MostFavouraiteProducts = props => {
         <Icons.Heart className="icon text-white/90 drop-shadow-md" />
         <h4 className="text-2xl font-bold text-white/95 text-shadow">精选品类</h4>
       </div>
-      <div className="grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+      <div className="grid grid-cols-2 gap-1 md:gap-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6">
         {isLoading
           ? Array(10)
               .fill('_')

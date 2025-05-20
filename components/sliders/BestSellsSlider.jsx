@@ -40,7 +40,7 @@ const BestSellsSlider = props => {
     tracking-wide
     [text-shadow:_0_2px_4px_rgba(0,0,0,0.2)]"
         >
-          新品展示
+          重磅新品
         </h4>
       </div>
 

@@ -62,9 +62,9 @@ const CategoryForm = props => {
           name="slug"
         />
 
-        <TextField label="图片地址" control={control} errors={formErrors.image} name="image" />
+        {/* <TextField label="图片地址" control={control} errors={formErrors.image} name="image" />
 
-        <UploadImage folder="/icons" handleAddUploadedImageUrl={handleAddUploadedImageUrl} />
+        <UploadImage folder="/icons" handleAddUploadedImageUrl={handleAddUploadedImageUrl} /> */}
 
         {categorySchema.isValidSync(watch()) && (
           <div className="mx-auto max-w-max">
